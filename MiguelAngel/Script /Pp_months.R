@@ -3,7 +3,7 @@ library(tidyverse)
 # Lectura de datos  -------------------------------------------------------
 
 read_csv('Data/estacion.csv') %>% 
-  separate(col = FECHA, into = c('día','mes','año'), sep = '/')%>%
+  separate(col = FECHA, into = c('día','mes','año'), sep = '/') %>%
   mutate(mes = as.factor((as.numeric(mes)))) %>% 
   group_by(año, mes) %>% 
   summarise(Pp = sum(VALOR)) %>% 
