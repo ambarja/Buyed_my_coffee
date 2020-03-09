@@ -1,18 +1,28 @@
 # Lectura de datos --------------------------------------------------------
-nombres_CA <- read.table('Data/nombres_CA.txt', sep = ',')
-nombres_TX <- read.table('Data/nombres_TX.TXT', sep = ',')
+
+nombres_CA <- read.table('Data/nombres_CA.txt', sep = ',',header = T)
+nombres_TX <- read.table('Data/nombres_TX.TXT', sep = ',',header = T)
 
 data <- rbind(nombres_CA,nombres_TX)
 
-contrybb <- function(year_min, year_max){
-  n <- subset(df , year == año & sex == F)
-  p <- n[,c('year','Name','Num')]
+contrybb <- function(df, year_min, year_max){
+  n <- subset(df , year_min <= year & year <=year_max || Sex == 'F')
+  p <- n[,c('year','Name','Sex','Num')]
+  rownames(p) <- NULL
   return(p)
 }
 
+contrybb(df = data,year_min = 2000,year_max = 2001)
+
 # Opcional con tidyverse : 
-# rbind(nombres_CA,nombres_TX) %>% 
-#   group_by(year,Name) %>% 
-#   summarise(Tniños = sum(Num)) -> pregunta01
+library(tidyverse)
+
+rbind(nombres_CA,nombres_TX) %>%
+  filter(year <=2001 & year >=2000) %>%
+  group_by(year,Sex,Name) %>%
+  summarise(Tniños = sum(Num)) -> pregunta02
+
+
+
 
 
