@@ -20,7 +20,8 @@ rbind(nombres_CA,nombres_TX) %>%
   mutate_if(is.character, as.factor) %>%
   group_by(Name) %>%
   count(Name) %>% 
-  arrange(desc(n))
+  arrange(desc(n)) %>% 
+  head(3)
   
 
 
