@@ -1,13 +1,13 @@
 # Lectura de datos --------------------------------------------------------
 library(tidyverse)
 
-nombres_CA <- read.table('Data/nombres_CA.txt', sep = ',')
-nombres_TX <- read.table('Data/nombres_TX.TXT', sep = ',')
+nombres_CA <- read.table('Data/nombres_CA.txt', sep = ',',header = T)
+nombres_TX <- read.table('Data/nombres_TX.TXT', sep = ',',header = T)
 
 data <- rbind(nombres_CA,nombres_TX)
 
 contrybb <- function(df,año){
-  n <- subset(df , year == año)
+  n <- subset(df , year == año & )
   p <- n[,c('year','Name','Num')]
   return(p)
   }
