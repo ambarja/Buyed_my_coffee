@@ -15,6 +15,6 @@ contrybb <- function(df,año){
 # Opcional con tidyverse : 
 # rbind(nombres_CA,nombres_TX) %>% 
 #   group_by(year,Name) %>% 
-#   summarise(Tniños = sum(Num)) -> pregunta01-
+#   summarise(Tniños = sum(Num)) -> pregunta01
 
 
