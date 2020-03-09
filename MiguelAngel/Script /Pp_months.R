@@ -9,7 +9,7 @@ read_csv('Data/estacion.csv') %>%
   summarise(Pp = sum(VALOR)) %>% 
   spread(mes,Pp) -> newdata
 
+# Salida ------------------------------------------------------------------
 colnames(newdata) <- c('años', month.name)
- 
 write.csv(newdata, 'Resultado/Newtable.csv')
 
