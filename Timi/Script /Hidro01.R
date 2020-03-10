@@ -27,6 +27,6 @@ ggplot2::ggsave(filename = 'Plot/Hidro.png',
                 plot = g1,
                 width = 10,
                 height = 4)
-
-
+# Referencia:
+# https://mran.microsoft.com/snapshot/2016-03-22/web/packages/ggpmisc/vignettes/examples.html
 
