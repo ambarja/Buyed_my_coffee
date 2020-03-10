@@ -3,17 +3,16 @@ library(ggpmisc)
 
 # Reading to data ---------------------------------------------------------
 data <- read_csv('Data/VOLUMEN VS COTA.csv')
-my.formula <-  data$VOLUMEN ~ poly(data$COTA, 3)
+my.formula <-  data$COTA ~ poly(data$VOLUMEN,3)
 
 data %>% 
-ggplot(aes(x = COTA,y = VOLUMEN)) + 
+ggplot(aes(x = VOLUMEN,y = COTA)) + 
   geom_line(col = 'blue') + 
-  scale_x_continuous(breaks = seq(4677.9,4679.6,length.out = 8)) +
-  scale_y_continuous(breaks = seq(0.054,2332.591,length.out = 8))+
+  scale_y_continuous(breaks = seq(4677.9,4679.6,length.out = 8)) +
+  scale_x_continuous(breaks = seq(0.054,2332.591,length.out = 8))+
   geom_point(shape = 15) + 
   stat_poly_eq(aes(label = ..eq.label..), formula = my.formula, 
                parse = TRUE) +
-  coord_flip() + 
   theme_bw() + 
   xlab(label = 'VOLUMEN(m3)') + 
   ylab(label = 'COTA (m)') + 
