@@ -16,7 +16,7 @@ var image1 = ee.ImageCollection(escena)
             .clip(pol);
 
 // Visualización de la img -------------------------------------------------
-
+Map.centerObject(pol, 13);
 Map.addLayer(image1,{bands:['B5','B4','B3'], min:0.12,max:0.34},'image01');
 print(image1);
 
