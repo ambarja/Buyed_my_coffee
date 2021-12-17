@@ -1,4 +1,12 @@
+# R-Project 
 .Rproj.user
 .Rhistory
 .RData
 .Ruserdata
+.Rproject
+
+# Jorge
+*/*.shp
+*/*.xlsx
+*/*.gpkg
+*/*.html
