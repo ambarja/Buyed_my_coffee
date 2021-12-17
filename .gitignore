@@ -1,11 +1,11 @@
 # R-Project 
-.Rproj.user
-.Rhistory
-.RData
-.Ruserdata
-.Rproject
+*/*.Rproj.user
+*/*.Rhistory
+*/*.RData
+*/*.Ruserdata
+*/*.Rproject
 
-# Jorge
+# Data
 */*.shp
 */*.xlsx
 */*.gpkg
